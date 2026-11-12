@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#12345a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="ONE MART">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <title>ONE MART | Outstanding & Visit Planner</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; background: #f4f7fb; }
+    body { font-family: Arial, sans-serif; }
+    #app { position: fixed; inset: 0; width: 100%; height: 100%; }
+    iframe { display: block; width: 100%; height: 100%; border: 0; background: white; }
+    #notice { position: fixed; inset: 0; display: grid; place-items: center; padding: 24px; color: #12345a; background: #f4f7fb; text-align: center; }
+    #notice[hidden] { display: none; }
+  </style>
+</head>
+<body>
+  <main id="app">
+    <iframe title="ONE MART Outstanding and Visit Planner" src="https://script.google.com/macros/s/AKfycbzwg0g0ovrQdbBmAzubj2aMKoXJyox5Z_jqECKgzgme13-iTjicc4fZE3B-RPo3JAUSWQ/exec" allow="clipboard-read; clipboard-write"></iframe>
+  </main>
+  <div id="notice" hidden>
+    <div>
+      <h2>ONE MART</h2>
+      <p>Connect to the internet to use the outstanding and visit planner.</p>
+    </div>
+  </div>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
+    }
+  </script>
+</body>
+</html>
